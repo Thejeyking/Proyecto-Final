@@ -2,6 +2,31 @@ import time
 import msvcrt
 import os
 
+def app_search():
+    print("")
+    print("Que es lo que desea buscar: ")
+    print("1. Cliente")
+    print("2. Empleado")
+    print("3. Producto")
+    print("4 Volver al menu principal")
+    print("")
+    search_opt = input("Elja el Nº de la opcion deseada: ")
+    os.system("cls")
+    if search_opt <= '4' and search_opt >= '0':
+        match search_opt:
+            case '1':
+                print("cliente")
+            case '2':
+                print("Empleado")
+            case '3':
+                print("Producto")
+            case '4':
+                os.system("cls")
+                menu()
+    else:
+        print("Opcion invalida elija un numero del 0 al 4")
+        app_search()
+
 def newuser():
     global user
     global keypass
@@ -103,6 +128,7 @@ def menu():
                 print("Registrar")
             case '2':
                 print("Buscar")
+                app_search()
             case '3':
                 print("Lista")
             case '4':
