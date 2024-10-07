@@ -1,5 +1,5 @@
 import funciones
-print("comentando")
+
 funciones.datos()
 funciones.newuser()
 funciones.informacion()

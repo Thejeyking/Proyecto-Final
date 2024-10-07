@@ -1,7 +1,7 @@
 import time
 import msvcrt
 import os
-print("comentado")
+
 def app_search():
     print("")
     print("Que es lo que desea buscar: ")
