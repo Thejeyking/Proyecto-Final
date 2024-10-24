@@ -100,7 +100,7 @@ def informacion():
     print(f"Telefono: {telefono}")
     print(f"E-mail: {email}")
     print("")
-
+#puedo modificar el menu con esdigital() para tener un 'int' en vez de un 'str'
 def menu():
     print("")
     print(f"{'':>10} _____________________________")
