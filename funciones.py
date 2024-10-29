@@ -10,30 +10,6 @@ detalle = str
 stock = int
 precio = float
 
-def app_search():
-    print("")
-    print("Que es lo que desea buscar: ")
-    print("1. Cliente")
-    print("2. Empleado")
-    print("3. Producto")
-    print("4 Volver al menu principal")
-    print("")
-    search_opt = input("Elja el Nº de la opcion deseada: ")
-    os.system("cls")
-    if search_opt <= '4' and search_opt >= '0':
-        match search_opt:
-            case '1':
-                print("cliente")
-            case '2':
-                print("Empleado")
-            case '3':
-                print("Producto")
-            case '4':
-                os.system("cls")
-                menu()
-    else:
-        print("Opcion invalida elija un numero del 0 al 4")
-        app_search()
 
 def newuser():
     global user
@@ -253,8 +229,6 @@ def editdts():
         print("Opcion invalida elija un numero del 1 al 6")
         editdts()   
 
-#DE ACA PARA ABAJO ES DEL CODIGO 1.0
-
 def additemsinit(): #Agrega un nuevo producto a la lista
     producto = input('Ingrese el nombre del producto: ')
     marca = input('Ingrese el nombre del marca: ')
@@ -273,7 +247,7 @@ def additemsinit(): #Agrega un nuevo producto a la lista
             break 
         except ValueError:
             print("¡Error! Ingrese un número válido.")
-    productos.append([producto,marca, tipo, detalle, cilindrada, stock, precio])
+    productos.append([producto.upper(),marca.lower(), tipo.lower(), detalle.lower(), cilindrada.lower(), stock, precio])
     print(productos)
     while True:
         print('Ingrese enter para agregar un producto o esc para salir')
@@ -414,7 +388,7 @@ def buscar(): #Busca dentro de la lista el producto especifico
             while tecla != b'\x1b':
                 producto_a_buscar = input('Ingrese el nombre del producto: ')
                 for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
-                    if bproducto == producto_a_buscar.lower():
+                    if bproducto == producto_a_buscar.upper():
                         print("")
                         print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                         return i
