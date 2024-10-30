@@ -3,21 +3,213 @@ import msvcrt
 import os
 productos = []
 producto = str
-marca = str
-tipo = str
-observaciones = str
-detalle = str
+detalle1 = str
+detalle2 = str
+detalle4 = str
+detalle3 = str
 stock = int
 precio = float
+detproductos = ['Producto','detalle31','detalle32','detalle33','detalle34']
 
+def test(): #lista DEMO donde agregamos automaticamente datos a la lista de producto como ejemplo
+    obj0 = "Moto"
+    obj1 = "Marca"
+    obj2 = "tipo"
+    obj3 = "color"
+    obj4 = "Cilindrada"
+    detproductos[0] = obj0
+    detproductos[1] = obj1
+    detproductos[2] = obj2
+    detproductos[3] = obj3
+    detproductos[4] = obj4
+    producto = 'rx150'
+    detalle1 = 'zanella'
+    detalle2 = 'calle'
+    detalle3 = 'roja'
+    detalle4 = '150cc'
+    stock = 10
+    precio = 1200000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'skua150'
+    detalle1 = 'motomel'
+    detalle2 = 'enduro'
+    detalle3 = 'verde'
+    detalle4 = '150cc'
+    stock = 7
+    precio = 1500000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'cg150'
+    detalle1 = 'honda'
+    detalle2 = 'calle'
+    detalle3 = 'negro'
+    detalle4 = '150cc'
+    stock = 24
+    precio = 1800000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'zr150'
+    detalle1 = 'zanella'
+    detalle2 = 'enduro'
+    detalle3 = 'roja'
+    detalle4 = '150cc'
+    stock = 12
+    precio = 1700000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'skua250'
+    detalle1 = 'motomel'
+    detalle2 = 'enduro'
+    detalle3 = 'roja'
+    detalle4 = '250cc'
+    stock = 7
+    precio = 2500000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'rx250'
+    detalle1 = 'zanella'
+    detalle2 = 'calle'
+    detalle3 = 'roja'
+    detalle4 = '250cc'
+    stock = 12
+    precio = 2200000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'fz150'
+    detalle1 = 'yamaha'
+    detalle2 = 'naked'
+    detalle3 = 'azul'
+    detalle4 = '250cc'
+    stock = 11
+    precio = 3200000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'fz25'
+    detalle1 = 'yamaha'
+    detalle2 = 'naked'
+    detalle3 = 'negra'
+    detalle4 = '250cc'
+    stock = 16
+    precio = 1800000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'ns200'
+    detalle1 = 'rouser'
+    detalle2 = 'naked'
+    detalle3 = 'negra'
+    detalle4 = '200cc'
+    stock = 16
+    precio = 1640000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'n250'
+    detalle1 = 'rouser'
+    detalle2 = 'naked'
+    detalle3 = 'negra'
+    detalle4 = '250cc'
+    stock = 16
+    precio = 2540000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'rz25'
+    detalle1 = 'zanella'
+    detalle2 = 'naked'
+    detalle3 = 'roja'
+    detalle4 = '250cc'
+    stock = 10
+    precio = 2500000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'cb1'
+    detalle1 = 'honda'
+    detalle2 = 'naked'
+    detalle3 = 'negro'
+    detalle4 = '150cc'
+    stock = 24
+    precio = 1950000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'cbx'
+    detalle1 = 'honda'
+    detalle2 = 'naked'
+    detalle3 = 'roja'
+    detalle4 = '250cc'
+    stock = 24
+    precio = 2950000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'xr150'
+    detalle1 = 'honda'
+    detalle2 = 'enduro'
+    detalle3 = 'roja'
+    detalle4 = '150cc'
+    stock = 17
+    precio = 1620000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'ybr'
+    detalle1 = 'yamaha'
+    detalle2 = 'calle'
+    detalle3 = 'azul'
+    detalle4 = '150cc'
+    stock = 12
+    precio = 1930000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'xr250'
+    detalle1 = 'honda'
+    detalle2 = 'enduro'
+    detalle3 = 'roja'
+    detalle4 = '250cc'
+    stock = 17
+    precio = 2730000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'zt150'
+    detalle1 = 'zanella'
+    detalle2 = 'enduro'
+    detalle3 = 'azul'
+    detalle4 = '250cc'
+    stock = 29
+    precio = 2250000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
+    producto = 'xtz250'
+    detalle1 = 'yamaha'
+    detalle2 = 'naked'
+    detalle3 = 'azul'
+    detalle4 = '150cc'
+    stock = 19
+    precio = 2650000
+    productos.append([producto.upper(),detalle1, detalle2, detalle3, detalle4, stock, precio])
 
-def newuser():
+def demo(): #activacion de la lista demo
+    print("Bienvenido a mi aplicacion")
+    print("Desea cargar una lista DEMO de productos o desea ingresar una nueva lista")
+    while True: #validacion si es un numero para el menu
+        try:
+            demo = input('ingrese "Y" para cargar DEMO que es una lista de motocicletas o "N" para ingresar una nueva: ')
+            print("")
+            if demo.lower() == "y":
+                test()
+                print("Se ha cargado una lista DEMO de productos de motos con exito")
+                break
+            elif demo.lower() == "n":
+                print("Ha elejido colocar sus propios productos a la app para registrarlos")
+                print("a continuacion se le pedira los datos para poder registrarlos con mas detalle3s")
+                print("le recordamos que mas adelante puede modificar estos mismos datos.")
+                print("")
+                detprod()
+                break
+            else:
+                os.system('cls')
+                print("¡Error! El digito ingresado es invalido")
+        except ValueError:
+            print("¡Error!")
+
+def detprod():#modificar el nombre de las listas segun el elemento
+    obj0 = input("Ingrese el nombre del Elemento a registrar (Producto, libro, grupo musical, modelo etc): ")
+    obj1 = input(f"Ingrese primera informacion del {obj0} Ej detalle3, autor, artista, fabricante etc: ")
+    obj2 = input(f"Ingrese segunda informacion del {obj0} Ej detalle1, genero, detalle2 etc: ")
+    obj3 = input(f"Ingrese tercera informacion del {obj0} Ej año, detalle2, color, editorial, etc: ")
+    obj4 = input(f"Ingrese cuarta informacion del {obj0} Ej detalle4, vencimientos, otros: ")
+    detproductos[0] = obj0
+    detproductos[1] = obj1
+    detproductos[2] = obj2
+    detproductos[3] = obj3
+    detproductos[4] = obj4
+
+def newuser(): #crea un usuario contraseña
     global user
     global keypass
     user = input("Ingrese un nuevo usuario: ")
     keypass = input("Ingrese una contraseña: ")
 
-def v_user():
+def v_user(): #valida el usuario
     while True:
         usuario = input("Usuario: ")
         if usuario != user:
@@ -63,7 +255,7 @@ def m_pass():
         editdts()
         break
 
-def datos():
+def datos(): #Funcion para ingresar los datos de la empresa
     global empresa
     global cuit
     global direccion
@@ -76,7 +268,7 @@ def datos():
     email = input('Ingrese el e-mail de la empresa: ')
     os.system("cls")
 
-def informacion():
+def informacion(): #Muestra los datos de la empresa
     print("")
     print(f"Empresa: {empresa.upper()}")
     print(f"Cuit:  {cuit}")
@@ -84,8 +276,8 @@ def informacion():
     print(f"Telefono: {telefono}")
     print(f"E-mail: {email}")
     print("")
-#puedo modificar el menu con esdigital() para tener un 'int' en vez de un 'str'
-def menu():
+
+def menu(): #Menu Principal
     print("")
     print(f"{'':>10} _____________________________")
     print(f"{'':>10}|\t\t       \t\t|")
@@ -98,8 +290,9 @@ def menu():
     print(f"{'':>10}|\t3\t| Lista\t\t|")
     print(f"{'':>10}|\t4\t| Actualizar\t|")
     print(f"{'':>10}|\t5\t| Eliminar\t|")
-    print(f"{'':>10}|\t6\t| Reportes\t|")
-    print(f"{'':>10}|\t7\t| Edit Empresa\t|")
+    print(f"{'':>10}|\t6\t| Reiniciar App\t|")
+    print(f"{'':>10}|\t7\t| Edit Registro\t|")
+    print(f"{'':>10}|\t8\t| Edit Empresa\t|")
     print(f"{'':>10}|\t9\t| Info Empresa\t|")
     print(f"{'':>10}|\t0\t| Salir\t\t|")
     print(f"{'':>10}|_____________________________|")
@@ -129,8 +322,31 @@ def menu():
                 os.system("cls")
                 popitems()
             case '6':
-                print("Reporte")
+                os.system("cls")
+                v_user()
+                os.system("cls")
+                while True:
+                    print('Ingrese "ENTER" para Confirmar o "ESC" para salir')
+                    salir = msvcrt.getch()
+                    if salir == b'\x1b':
+                        print('Operacion cancelada')
+                        break
+                    elif salir == b'\r':
+                        datos()
+                        newuser()
+                        informacion()
+                        demo()
+                    else:
+                        print('opcion invalida toque "ENTER" para CONFIRMAR o "ESC" para salir')
+                        continue
+                    break
             case '7':
+                os.system("cls")
+                v_user()
+                os.system("cls")
+                print("")
+                detprod()
+            case '8':
                 os.system("cls")
                 v_user()
                 os.system("cls")
@@ -151,7 +367,7 @@ def menu():
         print("Opcion invalida elija un numero del 0 al 9")
         menu()
 
-def editdts():
+def editdts(): #Menu para editar datos de la empresa
     global empresa
     global cuit
     global direccion
@@ -230,11 +446,11 @@ def editdts():
         editdts()   
 
 def additemsinit(): #Agrega un nuevo producto a la lista
-    producto = input('Ingrese el nombre del producto: ')
-    marca = input('Ingrese el nombre del marca: ')
-    tipo = input('Ingrese el nombre del tipo: ')
-    cilindrada = input('Ingrese el nombre del cilindrada: ')
-    detalle = input('Ingrese el nombre del color: ')
+    producto = input(f'Ingrese el nombre del {detproductos[0]}: ')
+    detalle1 = input(f'Ingrese {detproductos[1]}: ')
+    detalle2 = input(f'Ingrese {detproductos[2]}: ')
+    detalle4 = input(f'Ingrese {detproductos[3]}: ')
+    detalle3 = input(f'Ingrese {detproductos[4]}: ')
     while True:
         try:
             stock = int(input(f'Ingrese el stock de {producto}: '))
@@ -247,8 +463,10 @@ def additemsinit(): #Agrega un nuevo producto a la lista
             break 
         except ValueError:
             print("¡Error! Ingrese un número válido.")
-    productos.append([producto.upper(),marca.lower(), tipo.lower(), detalle.lower(), cilindrada.lower(), stock, precio])
-    print(productos)
+    productos.append([producto.upper(),detalle1.lower(), detalle2.lower(), detalle3.lower(), detalle4.lower(), stock, precio])
+    print("")
+    print(f"Se ha guardado ID:{len(productos)-1} {detproductos[0]}: {producto} \t {detproductos[1]}: {detalle1} \t {detproductos[2]}: {detalle2} \t {detproductos[3]}: {detalle4} \t {detproductos[4]}: {detalle3} \t Stock: {stock} \t Precio: ${precio}" )
+    print("")
     while True:
         print('Ingrese enter para agregar un producto o esc para salir')
         salir = msvcrt.getch()
@@ -265,7 +483,7 @@ def additemsinit(): #Agrega un nuevo producto a la lista
 def modificar(): #Ingresando el ID de la lista modifica el producto dentro de la misma
     while True:
         try:
-            identi = int(input("Ingrese el numero de ID del producto "))
+            identi = int(input(f"Ingrese el numero de ID del {detproductos[0]} "))
             print("")
             if identi <= len(productos):
                 break
@@ -274,24 +492,24 @@ def modificar(): #Ingresando el ID de la lista modifica el producto dentro de la
                 print("")
         except ValueError:
             print("¡Error! Ingrese un numero valido.")
-    m_producto = input("Ingrese su nuevo nombre de producto: ")
-    m_marca = input("Ingrese la nueva marca de producto: ")
-    m_tipo  = input("Ingrese su nuevo tipo: ")
-    m_detalle = input("Ingrese su nuevo detalle: ")
-    m_observaciones = input("Ingrese la cilindrada: ")
+    m_producto = input(f"Ingrese su nuevo nombre de {detproductos[0]}: ")
+    m_detalle1 = input(f"Ingrese {detproductos[1]}: ")
+    m_detalle2  = input(f"Ingrese {detproductos[2]}: ")
+    m_detalle3 = input(f"Ingrese {detproductos[3]}: ")
+    m_detalle4 = input(f"Ingrese {detproductos[4]}: ")
     m_stock = input("Ingrese el nuevo stock: ")
     m_precio = input("Ingrese el nuevo precio: ")
-    productos[identi] = [m_producto,m_marca,m_tipo,m_detalle,m_observaciones,m_stock,m_precio]
+    productos[identi] = [m_producto,m_detalle1,m_detalle2,m_detalle3,m_detalle4,m_stock,m_precio]
 
 def edititems(): #funcion busca el ID y lo envia a la funcion modificar
     tecla = "0"
     while tecla != b'\x1b':
-        producto_a_buscar = input('Ingrese el nombre del producto: ')
-        for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
+        producto_a_buscar = input(f'Ingrese el nombre {detproductos[0]}: ')
+        for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
             if bproducto == producto_a_buscar.lower():
                 print("")
                 print(f"Su ID es: {i}")
-                print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                 print("")
                 print('Toque "ENTER" identificar el producto a modificar o cualquiero otra tecla para salir')
                 tecla = msvcrt.getch()
@@ -302,7 +520,7 @@ def edititems(): #funcion busca el ID y lo envia a la funcion modificar
                 i = -1
         if i == -1:
             print("")
-            print(f"El producto {producto_a_buscar} no se encontró.")
+            print(f"{detproductos[0]}: {producto_a_buscar} no se encontró.")
             print("")
             print('Toque cualquier tecla para volver a buscar')
             print('Toque \"ESC\" para volver al menu de busqueda')
@@ -321,19 +539,19 @@ def eliminarprod(): #Funcion ingresando el ID elimina el producto de la lista
         except ValueError:
             print("¡Error! Ingrese un numero valido.")
     print("")
-    print(f"El Producto: {productos[identi]} ha sido eliminado de la lista")
+    print(f"{detproductos[0]}: {productos[identi]} ha sido eliminado de la lista")
     print("")
     productos.pop(identi)
 
 def popitems(): #funcion busca el ID y lo envia a la funcion eliminarprod
     tecla = "0"
     while tecla != b'\x1b':
-        producto_a_buscar = input('Ingrese el nombre del producto: ')
-        for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
+        producto_a_buscar = input(f'Ingrese el nombre del {detproductos[0]}: ')
+        for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
             if bproducto == producto_a_buscar.lower():
                 print("")
                 print(f"Su ID es: {i}")
-                print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                 print("")
                 print('Toque "ENTER" identificar el producto a eliminar o cualquiero otra tecla para salir')
                 tecla = msvcrt.getch()
@@ -344,7 +562,7 @@ def popitems(): #funcion busca el ID y lo envia a la funcion eliminarprod
                 i = -1
         if i == -1:
             print("")
-            print(f"El producto {producto_a_buscar} no se encontró.")
+            print(f"{detproductos[0]}: {producto_a_buscar} no se encontró.")
             print("")
             print('Toque cualquier tecla para volver a buscar')
             print('Toque \"ESC\" para volver al menu de busqueda')
@@ -352,7 +570,7 @@ def popitems(): #funcion busca el ID y lo envia a la funcion eliminarprod
 
 def list(): #Imprime todos los producto de la lista
     for i, producto in enumerate(productos):
-        print(f'ID: {i}\t Producto: {producto[0]}   \t\tMarca: {producto[1]}\t\tTipo: {producto[2]}\t\tCilindrada: {producto[4]}\t\tColor: {producto[3]}\t\tStock: {producto[5]}\t\tPrecio: ${producto[6]}')
+        print(f'ID: {i}\t {detproductos[0]}: {producto[0]}   \t\t{detproductos[1]}: {producto[1]}\t\t{detproductos[2]}: {producto[2]}\t\t{detproductos[3]}: {producto[3]}\t\t{detproductos[4]}: {producto[4]}\t\tStock: {producto[5]}\t\tPrecio: ${producto[6]}')
         print("")
     
     print("Para regresar toque una tecla")
@@ -364,11 +582,11 @@ def buscar(): #Busca dentro de la lista el producto especifico
     print("")
     print("Desea buscar por: ")
     print("")
-    print("1. Nombre del producto.")
-    print("2. Marca del producto.")
-    print("3. Tipo de producto.")
-    print("4. Detalle del producto")
-    print("5. Cilindrada")
+    print(f"1. Nombre del {detproductos[0]}.")
+    print(f"2. {detproductos[1]}.")
+    print(f"3. {detproductos[2]}.")
+    print(f"4. {detproductos[3]}.")
+    print(f"5. {detproductos[4]}.")
     print("6. Salir al Menu")
     print("")
     while True: #validacion si es un numero para el menu
@@ -386,106 +604,122 @@ def buscar(): #Busca dentro de la lista el producto especifico
         case 1: #busca por producto
             tecla = "0"
             while tecla != b'\x1b':
-                producto_a_buscar = input('Ingrese el nombre del producto: ')
-                for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
+                producto_a_buscar = input(f'Ingrese el nombre del {detproductos[0]}: ')
+                for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
                     if bproducto == producto_a_buscar.upper():
                         print("")
-                        print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                        print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                         return i
                     else:
                         i = -1
-                if i == -1:
-                    print("")
-                    print(f"El producto {producto_a_buscar} no se encontró.")
-                    print("")
-                    print('Toque cualquier tecla para volver a buscar')
-                    print('Toque \"ESC\" para volver al menu de busqueda')
-                    tecla = msvcrt.getch()
-            buscar()
-        case 2: #busca por marca
+                try:
+                    if i == -1:
+                        print("")
+                        print(f"El {detproductos[0]} {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar')
+                        print('Toque \"ESC\" para volver al menu de busqueda')
+                        tecla = msvcrt.getch()
+                    else:
+                        break
+                except UnboundLocalError:
+                    print("No hay datos en la base de datos")
+                    break
+        case 2: #busca por detalle1
             tecla = "0"
             y = 0
             while tecla != b'\x1b':
-                producto_a_buscar = input('Ingrese la marca: ')
-                for i, (bproducto, bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
-                    if bmarca == producto_a_buscar.lower():
+                producto_a_buscar = input(f'Ingrese la {detproductos[1]}: ')
+                for i, (bproducto, bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
+                    if bdetalle1 == producto_a_buscar.lower():
                         print("")
-                        print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                        print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                         y = 1
                     else:
                         i = -1
-                if y == 0 and i == -1:
-                    print("")
-                    print(f"La marca {producto_a_buscar} no se encontró.")
-                    print("")
-                    print('Toque cualquier tecla para volver a buscar ')
-                    print('Toque \"ESC\" para volver al menu principal')
-                    tecla = msvcrt.getch()
-                else:
-                    break
-                buscar()                
-        case 3: #busca por tipo
+                try:
+                    if y == 0 and i == -1:
+                        print("")
+                        print(f"{detproductos[1]} {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar ')
+                        print('Toque \"ESC\" para volver al menu principal')
+                        tecla = msvcrt.getch()
+                    else:
+                        break
+                except UnboundLocalError:
+                    print("No hay datos en la base de datos")                
+        case 3: #busca por detalle2
             tecla = "0"
             y = 0
             while tecla != b'\x1b':
-                producto_a_buscar = input('Ingrese el tipo: ')
-                for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
-                    if btipo == producto_a_buscar.lower():
+                producto_a_buscar = input(f'Ingrese {detproductos[2]}: ')
+                for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
+                    if bdetalle2 == producto_a_buscar.lower():
                         print("")
-                        print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                        print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                         y = 1
                     else:
                         i = -1
-                if y == 0 and i == -1:
-                    print("")
-                    print(f"La marca {producto_a_buscar} no se encontró.")
-                    print("")
-                    print('Toque cualquier tecla para volver a buscar ')
-                    print('Toque \"ESC\" para volver al menu principal')
-                    tecla = msvcrt.getch()
-                else:
-                    break
-        case 4: #busca por detalle
+                try:
+                    if y == 0 and i == -1:
+                        print("")
+                        print(f"{detproductos[2]} {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar ')
+                        print('Toque \"ESC\" para volver al menu principal')
+                        tecla = msvcrt.getch()
+                    else:
+                        break
+                except UnboundLocalError:
+                    print("No hay datos en la base de datos")    
+        case 4: #busca por detalle3
             tecla = "0"
             y = 0
             while tecla != b'\x1b':
-                producto_a_buscar = input('Ingrese el detalle: ')
-                for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
-                    if bdetalle == producto_a_buscar.lower():
+                producto_a_buscar = input(f'Ingrese el {detproductos[3]}: ')
+                for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
+                    if bdetalle4 == producto_a_buscar.lower():
                         print("")
-                        print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                        print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                         y = 1
                     else:
                         i = -1
-                if y == 0 and i == -1:
-                    print("")
-                    print(f"El detalle: {producto_a_buscar} no se encontró.")
-                    print("")
-                    print('Toque cualquier tecla para volver a buscar ')
-                    print('Toque \"ESC\" para volver al menu principal')
-                    tecla = msvcrt.getch()
-                else:
-                    break
+                try:
+                    if y == 0 and i == -1:
+                        print("")
+                        print(f"{detproductos[3]} {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar ')
+                        print('Toque \"ESC\" para volver al menu principal')
+                        tecla = msvcrt.getch()
+                    else:
+                        break
+                except UnboundLocalError:
+                    print("No hay datos en la base de datos")    
         case 5: #busca por obserbaciones
             tecla = "0"
             y = 0
             while tecla != b'\x1b':
-                producto_a_buscar = input('Ingrese el cilindrada: ')
-                for i, (bproducto,bmarca, btipo, bdetalle, bobservaciones, bstock, bprecio) in enumerate(productos):
-                    if bobservaciones == producto_a_buscar.lower():
+                producto_a_buscar = input(f'Ingrese el {detproductos[4]}: ')
+                for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
+                    if bdetalle3 == producto_a_buscar.lower():
                         print("")
-                        print(f"Producto {bproducto}\t\tMarca: {bmarca}\t\tTipo: {btipo}\t\tDetalle: {bdetalle}\t\tCilindrada: {bobservaciones}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                        print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
                         y = 1
                     else:
                         i = -1
-                if y == 0 and i == -1:
-                    print("")
-                    print(f"La Cilindrada: {producto_a_buscar} no se encontró.")
-                    print("")
-                    print('Toque cualquier tecla para volver a buscar ')
-                    print('Toque \"ESC\" para volver al menu principal')
-                    tecla = msvcrt.getch()
-                else:
-                    break
+                try:
+                    if y == 0 and i == -1:
+                        print("")
+                        print(f"{detproductos[4]} {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar ')
+                        print('Toque \"ESC\" para volver al menu principal')
+                        tecla = msvcrt.getch()
+                    else:
+                        break
+                except UnboundLocalError:
+                    print("No hay datos en la base de datos")    
         case 6: #ejecuta la funcion menu para volver atras
             menu()
