@@ -10,6 +10,14 @@ detalle3 = str
 stock = int
 precio = float
 detproductos = ['Producto','detalle31','detalle32','detalle33','detalle34']
+def run():
+    datos()
+    newuser()
+    informacion()
+    demo()
+    print(f"{"":>15}{'Bienvenidos a la app'}")
+    print(f"{"":>15}{"===================="}")
+    menu()
 
 def test(): #lista DEMO donde agregamos automaticamente datos a la lista de producto como ejemplo
     obj0 = "Moto"
@@ -301,27 +309,72 @@ def menu(): #Menu Principal
     os.system("cls")
     if opcion <= '9' and opcion >= '0':
         match opcion:
-            case '1':
+            case '1':#Create
                 print("Registrar")
                 additemsinit()
-            case '2':
+            case '2':#Read
                 print("Buscar")
                 buscar()
-            case '3':
+            case '3':#Read
                 print("Lista")
                 list()
-            case '4':
+            case '4': #Update
                 os.system("cls")
                 v_user()
                 os.system("cls")
                 print("Actualizar")
-                edititems()
-            case '5': #eliminar
+                print("")
+                tecla = "0"
+                while tecla != b'\x1b':
+                    producto_a_buscar = input(f'Ingrese {detproductos[0]} que desee modificar: ')
+                    for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
+                        if bproducto == producto_a_buscar.upper():
+                            print("")
+                            print(f"Su ID es: {i}")
+                            print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                            print("")
+                            print('Toque "ENTER" identificar el producto a modificar o cualquiero otra tecla para salir')
+                            tecla = msvcrt.getch()
+                            if tecla == b'\r':
+                                modificar()
+                            return i
+                        else:
+                            i = -1
+                    if i == -1:
+                        print("")
+                        print(f"{detproductos[0]}: {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar')
+                        print('Toque \"ESC\" para volver al menu de busqueda')
+                        tecla = msvcrt.getch()
+            case '5': #Delete
                 os.system("cls")
                 v_user()
                 os.system("cls")
-                popitems()
-            case '6':
+                tecla = "0"
+                while tecla != b'\x1b':
+                    producto_a_buscar = input(f'Ingrese el nombre del {detproductos[0]}: ')
+                    for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
+                        if bproducto == producto_a_buscar.upper():
+                            print("")
+                            print(f"Su ID es: {i}")
+                            print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
+                            print("")
+                            print('Toque "ENTER" identificar el producto a eliminar o cualquiero otra tecla para salir')
+                            tecla = msvcrt.getch()
+                            if tecla == b'\r':
+                                eliminarprod()
+                            return i
+                        else:
+                            i = -1
+                    if i == -1:
+                        print("")
+                        print(f"{detproductos[0]}: {producto_a_buscar} no se encontró.")
+                        print("")
+                        print('Toque cualquier tecla para volver a buscar')
+                        print('Toque \"ESC\" para volver al menu de busqueda')
+                        tecla = msvcrt.getch()
+            case '6':#DELETE GENERAL
                 os.system("cls")
                 v_user()
                 os.system("cls")
@@ -332,10 +385,8 @@ def menu(): #Menu Principal
                         print('Operacion cancelada')
                         break
                     elif salir == b'\r':
-                        datos()
-                        newuser()
-                        informacion()
-                        demo()
+                        productos.clear()
+                        run()
                     else:
                         print('opcion invalida toque "ENTER" para CONFIRMAR o "ESC" para salir')
                         continue
@@ -492,7 +543,7 @@ def modificar(): #Ingresando el ID de la lista modifica el producto dentro de la
                 print("")
         except ValueError:
             print("¡Error! Ingrese un numero valido.")
-    m_producto = input(f"Ingrese su nuevo nombre de {detproductos[0]}: ")
+    m_producto = input(f"Ingrese {detproductos[0]}: ")
     m_detalle1 = input(f"Ingrese {detproductos[1]}: ")
     m_detalle2  = input(f"Ingrese {detproductos[2]}: ")
     m_detalle3 = input(f"Ingrese {detproductos[3]}: ")
@@ -500,31 +551,7 @@ def modificar(): #Ingresando el ID de la lista modifica el producto dentro de la
     m_stock = input("Ingrese el nuevo stock: ")
     m_precio = input("Ingrese el nuevo precio: ")
     productos[identi] = [m_producto,m_detalle1,m_detalle2,m_detalle3,m_detalle4,m_stock,m_precio]
-
-def edititems(): #funcion busca el ID y lo envia a la funcion modificar
-    tecla = "0"
-    while tecla != b'\x1b':
-        producto_a_buscar = input(f'Ingrese el nombre {detproductos[0]}: ')
-        for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
-            if bproducto == producto_a_buscar.lower():
-                print("")
-                print(f"Su ID es: {i}")
-                print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
-                print("")
-                print('Toque "ENTER" identificar el producto a modificar o cualquiero otra tecla para salir')
-                tecla = msvcrt.getch()
-                if tecla == b'\r':
-                    modificar()
-                return i
-            else:
-                i = -1
-        if i == -1:
-            print("")
-            print(f"{detproductos[0]}: {producto_a_buscar} no se encontró.")
-            print("")
-            print('Toque cualquier tecla para volver a buscar')
-            print('Toque \"ESC\" para volver al menu de busqueda')
-            tecla = msvcrt.getch()
+    menu()
 
 def eliminarprod(): #Funcion ingresando el ID elimina el producto de la lista
     while True:
@@ -542,31 +569,7 @@ def eliminarprod(): #Funcion ingresando el ID elimina el producto de la lista
     print(f"{detproductos[0]}: {productos[identi]} ha sido eliminado de la lista")
     print("")
     productos.pop(identi)
-
-def popitems(): #funcion busca el ID y lo envia a la funcion eliminarprod
-    tecla = "0"
-    while tecla != b'\x1b':
-        producto_a_buscar = input(f'Ingrese el nombre del {detproductos[0]}: ')
-        for i, (bproducto,bdetalle1, bdetalle2, bdetalle4, bdetalle3, bstock, bprecio) in enumerate(productos):
-            if bproducto == producto_a_buscar.lower():
-                print("")
-                print(f"Su ID es: {i}")
-                print(f"{detproductos[0]} {bproducto}\t\t{detproductos[1]}: {bdetalle1}\t\t{detproductos[2]}: {bdetalle2}\t\t{detproductos[3]}: {bdetalle4}\t\t{detproductos[4]}: {bdetalle3}\t\tStock: {bstock}\t\tPrecio: ${bprecio}")
-                print("")
-                print('Toque "ENTER" identificar el producto a eliminar o cualquiero otra tecla para salir')
-                tecla = msvcrt.getch()
-                if tecla == b'\r':
-                    eliminarprod()
-                return i
-            else:
-                i = -1
-        if i == -1:
-            print("")
-            print(f"{detproductos[0]}: {producto_a_buscar} no se encontró.")
-            print("")
-            print('Toque cualquier tecla para volver a buscar')
-            print('Toque \"ESC\" para volver al menu de busqueda')
-            tecla = msvcrt.getch()
+    menu()
 
 def list(): #Imprime todos los producto de la lista
     for i, producto in enumerate(productos):
@@ -582,7 +585,7 @@ def buscar(): #Busca dentro de la lista el producto especifico
     print("")
     print("Desea buscar por: ")
     print("")
-    print(f"1. Nombre del {detproductos[0]}.")
+    print(f"1. {detproductos[0]}.")
     print(f"2. {detproductos[1]}.")
     print(f"3. {detproductos[2]}.")
     print(f"4. {detproductos[3]}.")
@@ -648,7 +651,8 @@ def buscar(): #Busca dentro de la lista el producto especifico
                     else:
                         break
                 except UnboundLocalError:
-                    print("No hay datos en la base de datos")                
+                    print("No hay datos en la base de datos")   
+                    break             
         case 3: #busca por detalle2
             tecla = "0"
             y = 0
@@ -672,7 +676,8 @@ def buscar(): #Busca dentro de la lista el producto especifico
                     else:
                         break
                 except UnboundLocalError:
-                    print("No hay datos en la base de datos")    
+                    print("No hay datos en la base de datos") 
+                    break   
         case 4: #busca por detalle3
             tecla = "0"
             y = 0
@@ -696,7 +701,8 @@ def buscar(): #Busca dentro de la lista el producto especifico
                     else:
                         break
                 except UnboundLocalError:
-                    print("No hay datos en la base de datos")    
+                    print("No hay datos en la base de datos") 
+                    break   
         case 5: #busca por obserbaciones
             tecla = "0"
             y = 0
@@ -720,6 +726,9 @@ def buscar(): #Busca dentro de la lista el producto especifico
                     else:
                         break
                 except UnboundLocalError:
-                    print("No hay datos en la base de datos")    
+                    print("No hay datos en la base de datos") 
+                    break   
         case 6: #ejecuta la funcion menu para volver atras
             menu()
+
+run()
