@@ -39,7 +39,7 @@ def insertar_Demo(): #funcion que almacena y crea un inventario de ejemplo para 
     db_demo = [
     ("YERBA", "Nobleza Gaucha 500 grs", 25, 1199.85, "Almacen"),
     ("GALLETITAS", "Mediatarde x3u 105grs", 46, 749.65, "Almacen"),
-    ("CHOCLO", "Marolio Grano AmarilloLata x 300grs", 132, 899.75, "Almacen"),
+    ("CHOCLO", "Marolio Grano, Lata 300grs", 132, 899.75, "Almacen"),
     ("MAYONESA", "Molto 241Grs", 32, 549.25, "Almacen"),
     ("HARINA", "Cañuela 000 1 Kg.", 283, 519.41, "Almacen"),
     ("JUGO EN POLVO", "clight 20grs", 32, 229.78, "Almacen"),
@@ -673,6 +673,7 @@ def additemsinit(): #Agrega un nuevo producto a la lista
             print(Fore.RED + 'Opcion invalida toque "ENTER" para ingresar un nuevo producto o "ESC" para salir')
             continue
         break
+
 
 def editar_producto(): #Funcion para poder actualizar los datos del producto
     while True:
